@@ -6,6 +6,12 @@ class MovieListing extends StatefulWidget {
   const MovieListing({super.key});
 
   @override
+  State<MovieListing> createState() => _MovieListingState();
+}
+
+class _MovieListingState extends State<MovieListing> {
+  int _selectedTickets = 0;   
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
