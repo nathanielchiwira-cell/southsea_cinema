@@ -31,7 +31,10 @@ class MovieListing extends StatelessWidget {
             child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
+                Text(
+                  "Marvels's Spider-Man: No Way Home (2021) (PG-13)",
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
 
         ]
              ),
