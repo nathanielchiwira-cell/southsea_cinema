@@ -43,6 +43,13 @@ class MovieListing extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(height: 16),
+
+          // Age rating + duration
+          const Text("Age Rating: PG-13"),
+          const Text("Duration: 2h 28m")
+
+
 
         
 
