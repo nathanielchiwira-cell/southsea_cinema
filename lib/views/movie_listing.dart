@@ -65,6 +65,17 @@ class MovieListing extends StatelessWidget {
                 });
               }
             },
+             dropdownMenuEntries: const [
+              DropdownMenuEntry(value: 0, label: "0 Adult (£7.50)"),
+              DropdownMenuEntry(value: 1, label: "1 Adult (£7.50)"),
+              DropdownMenuEntry(value: 2, label: "2 Adults (£15.00)"),
+              DropdownMenuEntry(value: 3, label: "3 Adults (£22.50)"),
+              DropdownMenuEntry(value: 4, label: "4 Adults (£30.00)"),
+              DropdownMenuEntry(value: 5, label: "5 Adults (£37.50)"),
+            ],
+          ),
+
+
 
 
 
