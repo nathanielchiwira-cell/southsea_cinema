@@ -12,7 +12,6 @@ class MovieListing extends StatefulWidget {
 class _MovieListingState extends State<MovieListing> {
   int _selectedTickets = 0;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +32,6 @@ class _MovieListingState extends State<MovieListing> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
           Container(
             margin: const EdgeInsets.only(bottom: 16.0),
             child: const Column(
@@ -44,10 +42,10 @@ class _MovieListingState extends State<MovieListing> {
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 8),
-                 Text(
+                Text(
                   "Science Fiction, Action, Adventure at Cinema Room.\n"
                   "Friday 17 Aug 2024 19:30 - 22:00.",
-                 ),
+                ),
               ],
             ),
           ),
@@ -102,21 +100,3 @@ class _MovieListingState extends State<MovieListing> {
     );
   }
 }
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-        
-    
-
- 
