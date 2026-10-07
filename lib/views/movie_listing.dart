@@ -35,6 +35,7 @@ class MovieListing extends StatelessWidget {
                   "Marvels's Spider-Man: No Way Home (2021) (PG-13)",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
+                SizedBox(height: 8),
 
         ]
              ),
