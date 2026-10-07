@@ -15,10 +15,14 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: const SizedBox.shrink(),
+      body: _buildBody(),
     );
   }
 }
+
+
+
+
 
 
         
