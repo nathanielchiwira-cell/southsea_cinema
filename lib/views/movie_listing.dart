@@ -73,7 +73,27 @@ class MovieListing extends StatelessWidget {
               DropdownMenuEntry(value: 4, label: "4 Adults (£30.00)"),
               DropdownMenuEntry(value: 5, label: "5 Adults (£37.50)"),
             ],
+          ), const SizedBox(height: 24),
+
+          // Booking button
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      "Added $_selectedTickets ticket(s) to your booking.",
+                    ),
+                  ),
+                );
+              },
+              child: const Text("Add to Booking"),
+            ),
           ),
+        ],
+      ),
+    );
+  }
 
 
 
