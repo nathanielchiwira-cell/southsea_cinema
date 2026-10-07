@@ -36,11 +36,15 @@ class MovieListing extends StatelessWidget {
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 8),
+                 Text(
+                  "Science Fiction, Action, Adventure at Cinema Room.\n"
+                  "Friday 17 Aug 2024 19:30 - 22:00.",
+                 ),
+              ],
+            ),
+          ),
 
-        ]
-             ),
-    );
-  }
+        
 
 
 
