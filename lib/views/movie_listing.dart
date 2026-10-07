@@ -73,7 +73,7 @@ class _MovieListingState extends State<MovieListing> {
                 });
               }
             },
-             dropdownMenuEntries: const [
+            dropdownMenuEntries: const [
               DropdownMenuEntry(value: 0, label: "0 Adult (£7.50)"),
               DropdownMenuEntry(value: 1, label: "1 Adult (£7.50)"),
               DropdownMenuEntry(value: 2, label: "2 Adults (£15.00)"),
@@ -81,27 +81,27 @@ class _MovieListingState extends State<MovieListing> {
               DropdownMenuEntry(value: 4, label: "4 Adults (£30.00)"),
               DropdownMenuEntry(value: 5, label: "5 Adults (£37.50)"),
             ],
-          ), const SizedBox(height: 24),
+          ),
+          const SizedBox(height: 24),
 
           // Booking button
-      
-            ElevatedButton(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      "Added $_selectedTickets ticket(s) to your booking.",
-                    ),
+          ElevatedButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    "Added $_selectedTickets ticket(s) to your booking.",
                   ),
-                );
-              },
-              child: const Text("Add to Booking"),
-            ),
+                ),
+              );
+            },
+            child: const Text("Add to Booking"),
           ),
         ],
       ),
     );
   }
+}
 
 
 
