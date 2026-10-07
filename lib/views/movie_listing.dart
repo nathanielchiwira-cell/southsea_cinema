@@ -54,6 +54,20 @@ class MovieListing extends StatelessWidget {
           const Text("Select Ticket Quantity (up to 5 in total)"),
           const SizedBox(height: 8),
 
+          DropdownMenu<int>(
+            initialSelection: _selectedTickets,
+            enableFilter: false,
+            enableSearch: false,
+            onSelected: (int? value) {
+              if (value != null) {
+                setState(() {
+                  _selectedTickets = value;
+                });
+              }
+            },
+
+
+
 
 
         
