@@ -18,7 +18,19 @@ class MovieListing extends StatelessWidget {
       body: _buildBody(),
     );
   }
-}
+
+  Widget _buildBody() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+
+          
+        ]
+             ),
+    );
+  }
 
 
 
