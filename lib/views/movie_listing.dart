@@ -84,8 +84,8 @@ class _MovieListingState extends State<MovieListing> {
           ), const SizedBox(height: 24),
 
           // Booking button
-          Center(
-            child: ElevatedButton(
+      
+            ElevatedButton(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
