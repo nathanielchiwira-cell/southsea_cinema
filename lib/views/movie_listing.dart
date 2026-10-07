@@ -26,7 +26,13 @@ class MovieListing extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
-          
+          Container(
+            margin: const EdgeInsets.only(bottom: 16.0),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+
+
         ]
              ),
     );
