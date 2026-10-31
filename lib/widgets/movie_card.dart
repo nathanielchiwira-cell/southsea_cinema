@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/models/movie.dart';
+import 'package:southsea_cinema/constants.dart';
 
 class MovieCard extends StatelessWidget {
   final Movie movie;
@@ -9,6 +10,7 @@ class MovieCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: cinemaSurface,
       margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0
       ),
       child: Padding(
@@ -49,8 +51,16 @@ class MovieCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
+           
             ElevatedButton(
-              onPressed: () {
+             style: ElevatedButton.styleFrom(
+              backgroundColor: cinemaBrand,
+              foregroundColor: Colors.white,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.zero,
+              ),
+             ),
+             onPressed: () {
                 debugPrint('Book Tickets for ${movie.title}');
               },
               child: const Text('Book Tickets'),
