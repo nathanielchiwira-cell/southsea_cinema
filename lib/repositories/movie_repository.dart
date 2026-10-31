@@ -20,7 +20,7 @@ class MovieRepository {
         ageRating: 'PG-13',
         screeningTime: 'Saturday 18 Aug 2024 18:00 - 20:15',
         ticketPrice: 10.00, 
-        imagePath: 'assets/images/Black_panther_(flim)_poster.jpg',
+        imagePath: 'assets/images/Black_Panther_(film)_poster.jpg',
       ),
     ];
   }
