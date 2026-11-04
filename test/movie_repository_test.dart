@@ -11,7 +11,7 @@ void main() {
       expect(movies.length, 2);
     });
     
-    test('getMovies contains Marvels Spider Man No Way Home', () {
+    test('getMovies contains Marvels Spider Man No Way Home and Black Panther', () {
       final repository = MovieRepository();
       final List<Movie> movies = repository.getMovies();
 
