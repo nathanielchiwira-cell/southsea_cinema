@@ -4,7 +4,7 @@ import 'package:southsea_cinema/main.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart';
 
 void main() {
- testWidgets('home page displays title, movie cards and booking buttons',
+  testWidgets('home page displays title, movie cards and booking buttons',
       (WidgetTester tester) async {
     // Give both movie cards enough room to appear.
     await tester.binding.setSurfaceSize(const Size(1000, 1600));

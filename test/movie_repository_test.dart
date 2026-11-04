@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:southsea_cinema/models/movie.dart'; 
+import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
 
 void main() {
@@ -10,8 +10,9 @@ void main() {
 
       expect(movies.length, 2);
     });
-    
-    test('getMovies contains Marvels Spider Man No Way Home and Black Panther', () {
+
+    test('getMovies contains Marvels Spider Man No Way Home and Black Panther',
+        () {
       final repository = MovieRepository();
       final List<Movie> movies = repository.getMovies();
 
@@ -29,4 +30,3 @@ void main() {
     });
   });
 }
-

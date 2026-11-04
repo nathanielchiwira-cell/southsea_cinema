@@ -11,8 +11,7 @@ class MovieCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: cinemaSurface,
-      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0
-      ),
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -20,7 +19,7 @@ class MovieCard extends StatelessWidget {
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [ 
+              children: [
                 Image.asset(
                   movie.imagePath,
                   width: 80,
@@ -31,7 +30,7 @@ class MovieCard extends StatelessWidget {
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [ 
+                    children: [
                       Text(
                         movie.title,
                         style: const TextStyle(
@@ -51,15 +50,14 @@ class MovieCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-           
             Align(
               alignment: Alignment.centerRight,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                 backgroundColor: cinemaBrand,
-                 foregroundColor: Colors.white,
-                 shape: const RoundedRectangleBorder(
-                   borderRadius: BorderRadius.zero,
+                  backgroundColor: cinemaBrand,
+                  foregroundColor: Colors.white,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
                   ),
                 ),
                 onPressed: () {
@@ -68,19 +66,9 @@ class MovieCard extends StatelessWidget {
                 child: const Text('Book Tickets'),
               ),
             ),
-          ],  
+          ],
         ),
       ),
     );
   }
 }
-         
-
- 
-
-
-
-
-                    
-                   
-           

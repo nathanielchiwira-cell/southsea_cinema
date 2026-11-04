@@ -16,14 +16,16 @@ class MovieRepository {
       Movie(
         id: 'Black Panther',
         title: 'Black Panther (2018)',
-        synopsis: 'T\'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country\'s past.',
+        synopsis:
+            'T\'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country\'s past.',
         ageRating: 'PG-13',
         screeningTime: 'Saturday 18 Aug 2024 18:00 - 20:15',
-        ticketPrice: 10.00, 
+        ticketPrice: 10.00,
         imagePath: 'assets/images/Black_Panther_(film)_poster.jpg',
       ),
     ];
   }
+
   Movie? getMovieById(String id) {
     for (final movie in getMovies()) {
       if (movie.id == id) {
