@@ -19,11 +19,13 @@ void main() {
       expect(spiderMan.id, 'Marvels Spider Man No Way Home');
       expect(spiderMan.title, 'Marvels\'s Spider-Man: No Way Home (2021)');
       expect(spiderMan.ticketPrice, 12.50);
+      expect(spiderMan.imagePath, isNotEmpty);
 
       final Movie blackPanther = movies[1];
       expect(blackPanther.id, 'Black Panther');
       expect(blackPanther.title, 'Black Panther (2018)');
       expect(blackPanther.ticketPrice, 10.00);
+      expect(blackPanther.imagePath, isNotEmpty);
     });
   });
 }
