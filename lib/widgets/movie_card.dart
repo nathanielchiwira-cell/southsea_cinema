@@ -62,6 +62,12 @@ class MovieCard extends StatelessWidget {
                 ),
                 onPressed: () {
                   debugPrint('Book Tickets for ${movie.title}');
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Tickets booked for ${movie.title}.'),
+                    ),
+                  );
                 },
                 child: const Text('Book Tickets'),
               ),
