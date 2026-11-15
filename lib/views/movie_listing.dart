@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
+import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
 
 class MovieListing extends StatefulWidget {
-  const MovieListing({super.key});
+  const MovieListing({super.key, required Movie movie});
 
   @override
   State<MovieListing> createState() => _MovieListingState();
