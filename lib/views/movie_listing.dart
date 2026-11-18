@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
+import 'package:southsea_cinema/models/basket_item.dart';
 import 'package:southsea_cinema/models/movie.dart';
+import 'package:southsea_cinema/repositories/basket_repository.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/widgets/primary_button.dart';
 
 class MovieListing extends StatefulWidget {
-  const MovieListing({super.key, required Movie movie});
+  final Movie movie;
+
+  const MovieListing({
+    super.key,
+    required this.movie,
+  });
 
   @override
   State<MovieListing> createState() => _MovieListingState();
@@ -12,6 +20,28 @@ class MovieListing extends StatefulWidget {
 
 class _MovieListingState extends State<MovieListing> {
   int _selectedTickets = 0;
+  String _confirmationMessage = '';
+
+  void _addToBasket() {
+    if (_selectedTickets > 0) {
+      final BasketItem item = BasketItem(
+        movie: widget.movie,
+        quantity: _selectedTickets,
+      );
+
+      BasketRepository.instance.addItem(item);
+
+      setState(() {
+        _confirmationMessage =
+            'Added $_selectedTickets ticket(s) for '
+            '${widget.movie.title} to basket';
+      });
+    } else {
+      setState(() {
+        _confirmationMessage = 'Please select at least 1 ticket';
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,37 +55,27 @@ class _MovieListingState extends State<MovieListing> {
   }
 
   Widget _buildBody() {
-    return Padding(
+    return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            margin: const EdgeInsets.only(bottom: 16.0),
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Marvels's Spider-Man: No Way Home (2021) (PG-13)",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 8),
-                Text(
-                  "Science Fiction, Action, Adventure at Cinema Room.\n"
-                  "Friday 17 Aug 2024 19:30 - 22:00.",
-                ),
-              ],
+          Text(
+            widget.movie.title,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 16),
-
-          // Age rating + duration
-          const Text("Age Rating: PG-13"),
-          const Text("Duration: 2h 28m"),
-
+          const SizedBox(height: 8),
+          Text(widget.movie.synopsis),
+          const SizedBox(height: 8),
+          Text('Age Rating: ${widget.movie.ageRating}'),
+          Text('Showing at: ${widget.movie.screeningTime}'),
+          Text('Ticket price: ${widget.movie.formattedPrice}'),
           const SizedBox(height: 24),
 
-          const Text("Select Ticket Quantity (up to 5 in total)"),
+          const Text('Select Ticket Quantity (up to 5 in total)'),
           const SizedBox(height: 8),
 
           DropdownMenu<int>(
@@ -69,30 +89,22 @@ class _MovieListingState extends State<MovieListing> {
                 });
               }
             },
-            dropdownMenuEntries: const [
-              DropdownMenuEntry(value: 0, label: "0 Adult (£7.50)"),
-              DropdownMenuEntry(value: 1, label: "1 Adult (£7.50)"),
-              DropdownMenuEntry(value: 2, label: "2 Adults (£15.00)"),
-              DropdownMenuEntry(value: 3, label: "3 Adults (£22.50)"),
-              DropdownMenuEntry(value: 4, label: "4 Adults (£30.00)"),
-              DropdownMenuEntry(value: 5, label: "5 Adults (£37.50)"),
-            ],
+            dropdownMenuEntries: List.generate(6, (int quantity) {
+              return DropdownMenuEntry<int>(
+                value: quantity,
+                label: '$quantity ticket(s)',
+              );
+            }),
           ),
           const SizedBox(height: 24),
 
-          // Booking button
-          ElevatedButton(
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(
-                    "Added $_selectedTickets ticket(s) to your booking.",
-                  ),
-                ),
-              );
-            },
-            child: const Text("Add to Booking"),
+          PrimaryButton(
+            label: 'Add to Basket',
+            onPressed: _addToBasket,
           ),
+          const SizedBox(height: 12),
+
+          Text(_confirmationMessage),
         ],
       ),
     );
