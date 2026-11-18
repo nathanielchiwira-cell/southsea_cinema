@@ -16,8 +16,7 @@ class MovieRepository {
       Movie(
         id: 'Marvels Spider Man No Way Home',
         title: "Marvels's Spider-Man: No Way Home (2021)",
-        synopsis:
-            "With Spider-Man's identity now revealed, Peter asks Doctor "
+        synopsis: "With Spider-Man's identity now revealed, Peter asks Doctor "
             'Strange for help. When a spell goes wrong, dangerous foes '
             'from other worlds start to appear, forcing Peter to discover '
             'what it truly means to be Spider-Man.',
@@ -60,8 +59,7 @@ class MovieRepository {
     final List<Movie> loadedMovies = [];
 
     for (final dynamic item in jsonList) {
-      final Map<String, dynamic> itemMap =
-          item as Map<String, dynamic>;
+      final Map<String, dynamic> itemMap = item as Map<String, dynamic>;
 
       final Movie movie = Movie.fromJson(itemMap);
 
