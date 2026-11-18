@@ -10,11 +10,10 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final movies = MovieRepository().getMovies();
-   
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(appTitle),
-          
       ),
       drawer: const NavDrawer(),
       body: ListView.builder(

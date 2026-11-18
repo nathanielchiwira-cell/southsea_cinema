@@ -62,7 +62,7 @@ class MovieCard extends StatelessWidget {
                     MaterialPageRoute<void>(
                       builder: (context) => MovieListing(movie: movie),
                     ),
-                  );       
+                  );
                 },
               ),
             ),

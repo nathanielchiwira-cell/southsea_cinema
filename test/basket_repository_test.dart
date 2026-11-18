@@ -66,8 +66,5 @@ void main() {
       expect(basket.getTotalTickets(), 0);
       expect(basket.getTotal(), 0.0);
     });
-
-
-
   });
 }

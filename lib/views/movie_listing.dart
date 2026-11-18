@@ -32,8 +32,7 @@ class _MovieListingState extends State<MovieListing> {
       BasketRepository.instance.addItem(item);
 
       setState(() {
-        _confirmationMessage =
-            'Added $_selectedTickets ticket(s) for '
+        _confirmationMessage = 'Added $_selectedTickets ticket(s) for '
             '${widget.movie.title} to basket';
       });
     } else {
@@ -74,10 +73,8 @@ class _MovieListingState extends State<MovieListing> {
           Text('Showing at: ${widget.movie.screeningTime}'),
           Text('Ticket price: ${widget.movie.formattedPrice}'),
           const SizedBox(height: 24),
-
           const Text('Select Ticket Quantity (up to 5 in total)'),
           const SizedBox(height: 8),
-
           DropdownMenu<int>(
             initialSelection: _selectedTickets,
             enableFilter: false,
@@ -97,13 +94,11 @@ class _MovieListingState extends State<MovieListing> {
             }),
           ),
           const SizedBox(height: 24),
-
           PrimaryButton(
             label: 'Add to Basket',
             onPressed: _addToBasket,
           ),
           const SizedBox(height: 12),
-
           Text(_confirmationMessage),
         ],
       ),

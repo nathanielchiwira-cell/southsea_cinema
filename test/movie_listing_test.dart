@@ -14,11 +14,11 @@ const Movie testMovie = Movie(
   imagePath: 'assets/images/test.jpg',
 );
 
-
 void main() {
   setUp(() => BasketRepository.instance.clear());
 
-  testWidgets('shows selected film, price and booking controls', (tester) async {
+  testWidgets('shows selected film, price and booking controls',
+      (tester) async {
     await tester.pumpWidget(
       const MaterialApp(home: MovieListing(movie: testMovie)),
     );
@@ -28,7 +28,8 @@ void main() {
     expect(find.text('Add to Basket'), findsOneWidget);
   });
 
-  testWidgets('zero tickets shows a warning and does not add a line', (tester) async {
+  testWidgets('zero tickets shows a warning and does not add a line',
+      (tester) async {
     await tester.pumpWidget(
       const MaterialApp(home: MovieListing(movie: testMovie)),
     );
@@ -38,7 +39,8 @@ void main() {
     expect(BasketRepository.instance.getItems(), isEmpty);
   });
 
-  testWidgets('selecting two tickets stores the selected film and total', (tester) async {
+  testWidgets('selecting two tickets stores the selected film and total',
+      (tester) async {
     await tester.pumpWidget(
       const MaterialApp(home: MovieListing(movie: testMovie)),
     );

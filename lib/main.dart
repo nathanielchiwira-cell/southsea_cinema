@@ -4,7 +4,6 @@ import 'package:southsea_cinema/views/home_view.dart';
 import 'package:southsea_cinema/views/basket_view.dart';
 import 'package:southsea_cinema/views/settings_view.dart';
 
-
 void main() {
   runApp(const SouthseaCinemaApp());
 }
@@ -46,5 +45,3 @@ class SouthseaCinemaApp extends StatelessWidget {
     );
   }
 }
-
-     

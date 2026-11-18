@@ -15,7 +15,6 @@ const Movie testMovie = Movie(
   imagePath: 'assets/images/test.jpg',
 );
 
-
 void main() {
   final basket = BasketRepository.instance;
   setUp(() => basket.clear());
@@ -39,7 +38,8 @@ void main() {
     expect(basket.getItems(), isEmpty);
   });
 
-  testWidgets('Checkout clears tickets and keeps confirmation visible', (tester) async {
+  testWidgets('Checkout clears tickets and keeps confirmation visible',
+      (tester) async {
     basket.addItem(const BasketItem(movie: testMovie, quantity: 2));
     await tester.pumpWidget(const MaterialApp(home: BasketView()));
     expect(find.text('Checkout'), findsOneWidget);
@@ -56,5 +56,4 @@ void main() {
     );
     expect(find.text('Checkout'), findsNothing);
   });
-
 }

@@ -34,8 +34,7 @@ void main() {
       );
       await tester.tap(find.text('Book Tickets'));
       await tester.pump();
-           expect(wasPressed, isTrue);
+      expect(wasPressed, isTrue);
     });
   });
 }
-
